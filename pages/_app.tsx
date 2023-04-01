@@ -1,6 +1,19 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "antd/dist/antd.css";
+import Head from "next/head";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+interface Props {
+  Component: React.ElementType;
 }
+
+const App = ({ Component }: Props) => {
+  return (
+    <>
+      <Head>
+        <title>NodeBird</title>
+      </Head>
+      <Component />
+    </>
+  );
+};
+
+export default App;
